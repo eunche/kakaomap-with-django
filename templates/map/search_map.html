@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block meta %}{% endblock meta %}
+
+{% block title %}Search Map{% endblock title %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'map/css/search_map.css' %}">
+{% endblock link %}
+
+{% block head_script %}{% endblock head_script %}
+
+
+
+
+
+
+{% block content %}
+{% endblock content %}
+
+
+
+
+
+{% block script %}
+<script>
+    const csrf = "{{csrf_token}}"
+    const api_url = "{% url 'map:add_favorite' %}"
+    const update_api_url = "{% url 'map:update_favorite' %}"
+</script>
+<script src="{% static 'map/js/likelion.js' %}"></script>
+<script src="{% static 'map/js/search_map.js' %}"></script>
+{% endblock script %}
